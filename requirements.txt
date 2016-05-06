@@ -1,2 +1,4 @@
 django
 pillow
+django-braces
+django-embed-video
