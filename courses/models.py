@@ -47,10 +47,7 @@ class Module(models.Model):
 class Content(models.Model):
     module = models.ForeignKey(Module, related_name='contents')
     content_type = models.ForeignKey(ContentType,
-                                     limit_choices_to={'model_in': ('text',
-                                                       'video',
-                                                       'image',
-                                                       'file')})
+                                     limit_choices_to={'model_in': ('text', 'video', 'image', 'file')})
     object_id = models.PositiveIntegerField()
     item = GenericForeignKey('content_type', 'object_id')
     order = OrderField(blank=True, for_fields=['module'])
